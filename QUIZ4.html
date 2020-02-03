@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#maindiv{
+  position: relative;
+  width: 400px;
+  height: 400px;
+  padding: 10px;
+  border: 1px solid;
+  margin: 0 auto;
+}
+#childdiv{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+}
+</style>
+<script>
+
+  setTimeout(function(){
+  
+  var valueran = Math.floor(Math.random() * Math.floor(400));
+  console.log(valueran);
+  document.getElementById("childdiv").style.top = valueran + "px";
+  document.getElementById("childdiv").style.left = valueran + "px";
+  
+  }, 2000);
+  
+  setTimeout(function(){
+  
+  document.getElementById("childdiv").style.backgroundColor = "blue";
+  
+  }, 4000);
+  
+  function hideBox(){
+	document.getElementById("childdiv").style.display = "none";
+	}
+
+ setInterval(function(){ 
+	var valueran = Math.floor(Math.random() * Math.floor(400));
+  document.getElementById("childdiv").style.backgroundColor = "blue";
+}, 1000);
+
+setInterval(function(){ 
+	var valueran = Math.floor(Math.random() * Math.floor(400));
+  document.getElementById("childdiv").style.backgroundColor = "green";
+}, 3000);
+
+setInterval(function(){ 
+	var valueran = Math.floor(Math.random() * Math.floor(400));
+  console.log(valueran);
+  document.getElementById("childdiv").style.top = valueran + "px";
+  document.getElementById("childdiv").style.left = valueran + "px"; 
+}, 3000);
+/*
+function hideBox(boxid){
+	boxid.style.display = "none";
+	}*/
+
+</script>
+</head>
+<body>
+
+<div id="maindiv">
+<div id="childdiv" onmouseover="hideBox(this)"></div>
+</div>
+
+
+
+
+</body>
+</html>
